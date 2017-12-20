@@ -1,9 +1,7 @@
 import express from 'express';
-import path from 'path';
 const router = express.Router()
+import * as HomeController from '../../controllers/homeController';
 
-router.get('/', (req, res) => {
-  return res.sendFile(path.join(__dirname, '../../../client/index.html'));
-});
+router.get('/', HomeController.renderHome);
 
 export default router;
