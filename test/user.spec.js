@@ -13,12 +13,11 @@ test.afterEach.always(t => {
   dropDB(t);
 });
 
-test.serial('Should get the user', async t => {
-  t.plan(2)
+test.serial('Should return error because no token', async t => {
+  t.plan(1)
   const res = await request(app)
-    .get('/user')
+    .get('/users')
     .set('Accept', 'application/json');
 
-  t.is(res.status, 200);
-  t.deepEqual(res.body, { name: 'tobi' });
+  t.is(res.status, 500);
 });

@@ -3,7 +3,7 @@
 import crypto from 'crypto';
 mongoose.Promise = require('bluebird');
 import mongoose, {Schema} from 'mongoose';
-import {registerEvents} from './user.events';
+import {registerEvents} from '../events/user.events';
 
 const authTypes = ['facebook', 'google'];
 

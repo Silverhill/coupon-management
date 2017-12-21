@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
+import bodyParser from 'body-parser';
 import home from './routes/home';
 import user from './routes/user';
 
@@ -12,6 +13,8 @@ const port = 3000;
 const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/coupon-db';
 const app = express();
 const compiler = webpack(config);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 let v1 = express.Router()
 
@@ -38,8 +41,13 @@ if (process.env.NODE_ENV !== 'test') {
 
 // Api routes
 
+//Users
 v1.use('/', home);
-v1.use('/user', user);
+v1.use('/users', user);
+
+//Auth
+v1.use('/auth', require('./auth').default);
+//v1.use('/api/users', require('./user'));
 
 // Api version
 app.use('/v1', v1);
@@ -63,9 +71,5 @@ app.listen(port, function (error) {
         }
     }
 });
-
-
-v1.use('/auth', require('./auth').default);
-v1.use('/api/users', require('./user'));
 
 export default app;
