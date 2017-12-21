@@ -37,6 +37,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // Api routes
+
 v1.use('/', home);
 v1.use('/user', user);
 
@@ -62,5 +63,9 @@ app.listen(port, function (error) {
         }
     }
 });
+
+
+v1.use('/auth', require('./auth').default);
+v1.use('/api/users', require('./user'));
 
 export default app;
