@@ -1,11 +1,14 @@
 import React from 'react';
+import Header from './common/Header';
+import Pages from '../routes';
 
 class App extends React.Component {
 
   render(){
     return(
       <div>
-        <h1>Hello from React!!!</h1>
+        <Header />
+        <Pages />
       </div>
     )
   }

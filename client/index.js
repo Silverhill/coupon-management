@@ -1,11 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import configureStore from './store/configureStore'
 import { AppContainer } from 'react-hot-loader'
+import { Provider } from 'react-redux'
 import App from './components/App'
+import { Router } from 'react-router-dom'
+import history from './history';
+
+const store = configureStore();
 
 ReactDOM.render(
   <AppContainer>
-    <App/>
+    <Provider store={store}>
+      <Router history={history}>
+        <App/>
+      </Router>
+    </Provider>
   </AppContainer>,
   document.getElementById('root')
 );
@@ -16,7 +26,11 @@ if (module.hot) {
     const NextApp = require('./components/App').default;
     ReactDOM.render(
       <AppContainer>
-        <NextApp/>
+        <Provider store={store}>
+          <Router history={history}>
+            <NextApp/>
+          </Router>
+        </Provider>
       </AppContainer>,
       document.getElementById('root')
     );
