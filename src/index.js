@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom'
+import { Router } from 'react-router-dom';
+
 import 'coupon-components/build/css/styles.css';
 
 import './index.scss';

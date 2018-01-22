@@ -1,10 +1,12 @@
 import axios from 'axios'
+import config from '../environment';
 
 class SessionApi {
   static login(credentials) {
+    console.log(config);
     return axios({
       method:'post',
-      url:'http://localhost:3000/v1/auth/local',
+      url: `${config.API_URL}auth/local`,
       data: credentials
     });
   }
