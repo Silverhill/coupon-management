@@ -1,69 +1,57 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
-import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as sessionActions from '../../actions/sessionActions';
 import { Button } from 'coupon-components';
 
 class LogInPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      credentials: {
-        email: '',
-        password: ''
-      }
+  state = {
+    credentials: {
+      email: '',
+      password: ''
     }
-    this.onChange = this.onChange.bind(this);
-    this.onSave = this.onSave.bind(this);
   }
 
-  onChange(event) {
-    const field = event.target.name;
-    const credentials = this.state.credentials;
-    credentials[field] = event.target.value;
-    return this.setState({credentials: credentials});
+  onChange = (event) => {
+    this.setState({
+      credentials: {
+        ...this.state.credentials,
+        [event.target.name]: event.target.value,
+      }
+    });
+
   }
 
-  onSave(event) {
+  onSave = (event) => {
     event.preventDefault();
-    this.props.actions.loginUser(this.state.credentials);
+    this.props.loginUser(this.state.credentials);
   }
 
   render() {
     return (
       <div>
-        <form>
+        <form onChange={this.onChange} onSubmit={this.onSave}>
           <TextInput
             name="email"
             label="email"
-            value={this.state.credentials.email}
-            onChange={this.onChange}/>
+            value={this.state.credentials.email} />
 
           <TextInput
             name="password"
             label="password"
             type="password"
-            value={this.state.credentials.password}
-            onChange={this.onChange}/>
+            value={this.state.credentials.password} />
 
-          <Button
-            onClick={this.onSave}
-            type="submit"
-            text="login"
-          />
-
-            {" "}
+          <Button type="submit" text="login" />
         </form>
       </div>
   );
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(sessionActions, dispatch)
-  };
-}
-export default connect(null, mapDispatchToProps)(LogInPage);
+export default connect(
+  null,
+{
+  loginUser: sessionActions.loginUser,
+})(LogInPage);
