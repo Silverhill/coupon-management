@@ -1,20 +1,7 @@
-## Coupon: backend and admin
+## Coupon management
 
-[![CircleCI](https://circleci.com/gh/Silverhill/coupon-management.svg?style=svg)](https://circleci.com/gh/Silverhill/coupon-management)
+### Available scripts
 
-
-MongoDB, ExpressJS, ReactJS and NodeJS (MERN) stack
-
-
-### Development
-
-- Clone the repo
-- npm install
-- npm start
-
-
-### TODO
-
-- Script for production (PM2 maybe?)
-- Webpack for production
-
+  - npm start
+  - npm test
+  - npm run build
