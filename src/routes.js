@@ -7,6 +7,7 @@ import {
 import PrivatePage from './components/private/PrivatePage';
 import LogInPage from './components/login/LoginPage';
 import HomePage from './components/home/HomePage';
+import HunterPage from './components/hunters/HunterPage';
 import auth from './auth/authenticator';
 import PropTypes from 'prop-types';
 
@@ -33,6 +34,7 @@ const Pages = () => {
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LogInPage} />
       <PrivateRoute path="/private" component={PrivatePage}/>
+      <PrivateRoute path="/hunters" component={HunterPage}/>
     </Switch>
   );
 }

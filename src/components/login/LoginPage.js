@@ -1,9 +1,10 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-import TextInput from '../common/TextInput';
 import {connect} from 'react-redux';
+import { graphql } from 'react-apollo';
+
+import QueryService from '../../queries-service';
 import * as sessionActions from '../../actions/sessionActions';
-import { Button } from 'coupon-components';
+import { InputBox, Button } from 'coupon-components';
 
 class LogInPage extends React.Component {
   state = {
@@ -23,8 +24,17 @@ class LogInPage extends React.Component {
 
   }
 
-  onSave = (event) => {
+  onSave = async (event) => {
     event.preventDefault();
+    let email = this.state.credentials.email;
+    let password = this.state.credentials.password;
+    const result = await this.props.mutate({
+      variables: {
+        email,
+        password
+      },
+    });
+    sessionStorage.setItem('jwt', result.data.login);
     this.props.loginUser(this.state.credentials);
   }
 
@@ -32,26 +42,39 @@ class LogInPage extends React.Component {
     return (
       <div>
         <form onChange={this.onChange} onSubmit={this.onSave}>
-          <TextInput
+
+          <InputBox
             name="email"
-            label="email"
-            value={this.state.credentials.email} />
+            leftIcon="FaUser"
+            placeholder="Usuario"
+            shape="pill"
+            value={this.state.credentials.email}
+          />
 
-          <TextInput
+          <InputBox
             name="password"
-            label="password"
+            leftIcon="FaLock"
             type="password"
-            value={this.state.credentials.password} />
+            placeholder="Contraseña"
+            shape="pill"
+            value={this.state.credentials.password}
+          />
 
-          <Button type="submit" text="login" />
+          <Button shape="pill"
+                  gradient
+                  type="submit"
+                  text="login" />
         </form>
       </div>
   );
   }
 }
 
+const LoginPageWithLogin = graphql(QueryService.login)(LogInPage);
+
 export default connect(
   null,
 {
   loginUser: sessionActions.loginUser,
-})(LogInPage);
+})(LoginPageWithLogin);
+
