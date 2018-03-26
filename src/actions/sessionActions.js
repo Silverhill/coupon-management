@@ -1,5 +1,4 @@
 import * as types from './actionTypes';
-import sessionApi from '../api/SessionApi';
 import auth from '../auth/authenticator';
 
 export function loginSuccess() {
@@ -8,14 +7,14 @@ export function loginSuccess() {
 
 export function loginUser(credentials) {
   return function(dispatch) {
-    return sessionApi.login(credentials).then(response => {
-      if (response.data && response.data.token) {
-        sessionStorage.setItem('jwt', response.data.token);
+    // return sessionApi.login(credentials).then(response => {
+    //   if (response.data && response.data.token) {
+    //     sessionStorage.setItem('jwt', response.data.token);
         dispatch(loginSuccess());
-      }
-    }).catch(error => {
-      alert(error.response.data.message)
-    });
+    //   }
+    // }).catch(error => {
+    //   alert(error.response.data.message)
+    // });
   };
 }
 
