@@ -13,7 +13,6 @@ class HunterPage extends React.Component {
 
   render() {
     if(!this.props.data.loading){
-      console.log(this.props.data.allHunters);
       return (
           <div>
             <Card title="Hunters" className={style.hunterCard}>
