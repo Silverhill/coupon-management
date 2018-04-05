@@ -46,7 +46,6 @@ Header.propTypes = {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {logged_in: state.session};
 }
 

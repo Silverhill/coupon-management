@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Route,
-  Switch,
-  Redirect
-} from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import LogInPage from 'Pages/login/LoginPage';
