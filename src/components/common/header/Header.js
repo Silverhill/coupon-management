@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as sessionActions from '../../actions/sessionActions';
+import * as sessionActions from '../../../actions/sessionActions';
 
 class Header extends React.Component {
   constructor() {
@@ -21,8 +21,6 @@ class Header extends React.Component {
       return (
         <nav>
           <NavLink to="/" activeClassName="active">Home</NavLink>
-          {" | "}
-          <NavLink to="/private" activeClassName="active">Private</NavLink>
           {" | "}
           <NavLink to="/hunters" activeClassName="active">Hunters</NavLink>
           {" | "}
@@ -42,10 +40,13 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  userData: PropTypes.object,
+  tabs: PropTypes.array,
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return {logged_in: state.session};
 }
 
@@ -56,3 +57,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
+

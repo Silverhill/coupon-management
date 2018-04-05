@@ -4,12 +4,11 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import PrivatePage from 'Pages/private/PrivatePage';
+import PropTypes from 'prop-types';
+
 import LogInPage from 'Pages/login/LoginPage';
 import HomePage from 'Pages/home/HomePage';
-import HunterPage from 'Pages/hunters/HunterPage';
 import auth from './auth/authenticator';
-import PropTypes from 'prop-types';
 
 const PrivateRoute = ({ component: Component }) => (
   <Route render={props => (
@@ -31,10 +30,8 @@ PrivateRoute.propTypes = {
 const Pages = () => {
   return (
     <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/login" component={LogInPage} />
-      <PrivateRoute path="/private" component={PrivatePage}/>
-      <PrivateRoute path="/hunters" component={HunterPage}/>
+        <Route path="/login" component={LogInPage} />
+        <PrivateRoute path='/' component={HomePage} />
     </Switch>
   );
 }
