@@ -7,7 +7,7 @@ import { ApolloProvider } from 'react-apollo';
 import 'coupon-components/build/styles.css';
 
 import './index.scss';
-import App from './components/App'
+import App from './App'
 import history from './history';
 import configureStore from './store/configureStore'
 import registerServiceWorker from './registerServiceWorker';

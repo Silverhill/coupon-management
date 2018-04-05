@@ -4,10 +4,10 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import PrivatePage from './components/private/PrivatePage';
-import LogInPage from './components/login/LoginPage';
-import HomePage from './components/home/HomePage';
-import HunterPage from './components/hunters/HunterPage';
+import PrivatePage from 'Pages/private/PrivatePage';
+import LogInPage from 'Pages/login/LoginPage';
+import HomePage from 'Pages/home/HomePage';
+import HunterPage from 'Pages/hunters/HunterPage';
 import auth from './auth/authenticator';
 import PropTypes from 'prop-types';
 
