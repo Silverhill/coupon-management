@@ -4,7 +4,7 @@ const QueryService = {
   getHunters: gql`
     query allHunters{
       allHunters {
-        _id
+        id
         name
         email
         provider
@@ -19,7 +19,7 @@ const QueryService = {
   getMakers: gql`
   query allMakers{
     allMakers {
-      _id
+      id
       name
       email
     }
