@@ -2,12 +2,13 @@ import gql from 'graphql-tag';
 
 const QueryService = {
   getHunters: gql`
-    query allMakers{
-      allMakers {
+    query allHunters{
+      allHunters {
         _id
         name
         email
         provider
+        couponCount
       }
   }`,
   login: gql`
