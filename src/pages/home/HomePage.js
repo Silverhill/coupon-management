@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Header from 'Components/common/header/Header';
 import HunterPage from 'Pages/hunters/HunterPage';
+import MakerPage from 'Pages/makers/MakerPage';
 
 import styles from './HomePage.scss';
 
@@ -18,6 +19,7 @@ class HomePage extends React.Component {
             <Switch>
               <Route exact path='/' component={PageHome} />
               <Route path='/hunters' component={HunterPage} />
+              <Route path='/makers' component={MakerPage} />
             </Switch>
           </main>
         </div>

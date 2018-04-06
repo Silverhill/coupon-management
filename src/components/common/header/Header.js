@@ -24,6 +24,8 @@ class Header extends React.Component {
           {" | "}
           <NavLink to="/hunters" activeClassName="active">Hunters</NavLink>
           {" | "}
+          <NavLink to="/makers" activeClassName="active">Makers</NavLink>
+          {" | "}
           <a href="/logout" onClick={this.logOut}>log out</a>
         </nav>
       );
