@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
-import { Card, Typography, RowHunter} from 'coupon-components';
+import { Card, Typography, RowHunter } from 'coupon-components';
 
 import QueryService from '../../queries-service';
 import style from './HunterPage.scss';
@@ -12,25 +12,30 @@ class HunterPage extends React.Component {
   }
 
   render() {
-    if(!this.props.data.loading){
+    if (!this.props.data.loading) {
       return (
-          <div>
+        <div className={style.container}>
+          <div className={style.leftPanel}>
+            <h1>todo: add something</h1>
+          </div>
+          <div className={style.userList}>
             <Card title="Hunters" className={style.hunterCard}>
-                <Typography.Title>Listado de Hunters</Typography.Title>
-                {(this.props.data.allHunters || []).map((user, i) => (
-                  <Card key={i}>
-                    <RowHunter
-                      key={i}
-                      name={user.name}
-                      email={user.email}
-                      totalCoupons={user.couponCount}
-                    />
-                    </Card>
-                ))}
+              <Typography.Title>Listado de Hunters</Typography.Title>
+              {(this.props.data.allHunters || []).map((user, i) => (
+                <Card key={i}>
+                  <RowHunter
+                    key={i}
+                    name={user.name}
+                    email={user.email}
+                    totalCoupons={user.couponCount}
+                  />
+                </Card>
+              ))}
             </Card>
           </div>
+        </div>
       );
-    }else{
+    } else {
       return <div>Loading...</div>;
     }
 
