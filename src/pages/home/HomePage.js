@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from 'Components/common/header/Header';
 import HunterPage from 'Pages/hunters/HunterPage';
 import MakerPage from 'Pages/makers/MakerPage';
+import Footer from 'Components/common/footer/Footer';
 
 import styles from './HomePage.scss';
 
@@ -23,6 +24,7 @@ class HomePage extends React.Component {
             </Switch>
           </main>
         </div>
+        <Footer/>
       </div>
     );
   }
