@@ -1,0 +1,10 @@
+.container {
+    position: absolute;
+    display: table;
+    height: 100%;
+    width: 100%;
+    .mainView {
+        width: 80%;
+        margin: auto;
+    }
+}

@@ -4,7 +4,7 @@ const QueryService = {
   getHunters: gql`
     query allHunters{
       allHunters {
-        _id
+        id
         name
         email
         provider
@@ -15,7 +15,15 @@ const QueryService = {
   mutation login($email: String!, $password: String!){
     login(email: $email, password: $password)
   }
-  `
+  `,
+  getMakers: gql`
+  query allMakers{
+    allMakers {
+      id
+      name
+      email
+    }
+  }`
 }
 
 export default QueryService;
