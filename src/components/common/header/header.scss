@@ -1,15 +1,9 @@
-@value colors: "Styles/palette.scss";
-@value (
-  whiteColor,
-  primaryColor,
-  secondaryColor,
-  lightNeutral
-) from colors;
+@import "~Styles/palette.scss";
 
 .container {
   height: 57px;
   width: 100%;
-  background: lightNeutral;
+  background: $lightNeutral;
   display: flex;
   justify-content: space-between;
 }
@@ -42,13 +36,13 @@
 .dividerLogo {
   height: 90%;
   width: 0.1rem;
-  background: primaryColor;
+  background: $primaryColor;
   margin-left: 0.3rem;
   margin-right: 0.3rem;
 }
 
 .active {
-  color: primaryColor;
+  color: $primaryColor;
 }
 
 .tabs {
@@ -67,7 +61,7 @@
 
 .menuContainer {
   width: 100%;
-  background-color: whiteColor;
+  background-color: $whiteColor;
   max-height: 10rem;
   overflow-y: scroll;
 }
@@ -77,14 +71,14 @@
   cursor: pointer;
 
   &:nth-child(even) {
-    background: lightNeutral;
+    background: $lightNeutral;
   }
 
   &:hover {
-    background-color: secondaryColor;
+    background-color: $secondaryColor;
 
     & p {
-      color: whiteColor !important;
+      color: $whiteColor !important;
     }
   }
 }

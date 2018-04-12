@@ -9,12 +9,12 @@ import { Avatar,
 import PropTypes from 'prop-types';
 
 import Logo from 'Components/common/logo/Logo';
-import { primaryColor } from 'Styles/palette.scss';
 import styles from './header.scss';
 
 class Header extends React.Component {
 
   render() {
+    const primaryColor = '#ff4a67';
     const { tabs, userData } = this.props;
 
     return (
