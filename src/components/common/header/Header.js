@@ -7,13 +7,14 @@ import { Avatar,
          DropdownTrigger,
          DropdownContent } from 'coupon-components';
 import PropTypes from 'prop-types';
-import styles from './header.scss';
+
 import Logo from 'Components/common/logo/Logo';
+import { primaryColor } from 'Styles/palette.scss';
+import styles from './header.scss';
 
 class Header extends React.Component {
 
   render() {
-    const primaryColor = '#fefefe';
     const { tabs, userData } = this.props;
 
     return (
