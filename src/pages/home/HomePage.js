@@ -32,7 +32,7 @@ class HomePage extends React.Component {
       {
         id: 0,
         label: 'Home',
-        route: '/',
+        route: '/home',
         icon: 'CpTicket'
       },
       {
@@ -72,7 +72,7 @@ class HomePage extends React.Component {
         <div className={styles.mainView}>
           <main className={styles.renderContainer}>
             <Switch>
-              <Route exact path='/' component={PageHome} />
+              <Route path='/home' component={PageHome} />
               <Route path='/hunters' component={HunterPage} />
               <Route path='/makers' component={MakerPage} />
             </Switch>

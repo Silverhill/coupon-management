@@ -32,37 +32,37 @@ $lightBlueColor: #4a9fff;
  * Main Pallette
  ****************/
 
-$primaryColor: pinkRed;
-$secondaryColor: brightBlue;
-$lightNeutral: paleLilac;
-$mediumNeutral: paleGray;
+$primaryColor: $pinkRed;
+$secondaryColor: $brightBlue;
+$lightNeutral: $paleLilac;
+$mediumNeutral: $paleGray;
 $darkNeutral: #8F8E94;
-$darkColor: baseGray;
-$highlightColor: brightBlue;
+$darkColor: $baseGray;
+$highlightColor: $brightBlue;
 
 /****************
  * Pallette
  ****************/
 
 $neutralColorDark: #8F8E94;
-$neutralColorMedium: paleGray;
-$neutralColorLight: paleLilac;
-$neutralColorPlain: baseGrayMedium;
+$neutralColorMedium: $paleGray;
+$neutralColorLight: $paleLilac;
+$neutralColorPlain: $baseGrayMedium;
 $whiteColor: white;
-$accentColor: clearBlue;
-$accentColorSecondary: pinkRed;
-$starGradient: sunshineLightYellow;
-$endGradient: strongPink;
-$highlightNeutral: brightBlue;
-$successAccent: greenAccent;
-$successNeutral: greenNeutral;
-$successLight: greenLight;
-$infoAccent: blueAccent;
-$infoNeutral: blueNeutral;
-$infoLight: blueLight;
-$warningAccent: brownAccent;
-$warningNeutral: brownNeutral;
-$warningLight: brownLight;
-$dangerAccent: redAccent;
-$dangerNeutral: redNeutral;
-$dangerLight: redLight;
+$accentColor: $clearBlue;
+$accentColorSecondary: $pinkRed;
+$starGradient: $sunshineLightYellow;
+$endGradient: $strongPink;
+$highlightNeutral: $brightBlue;
+$successAccent: $greenAccent;
+$successNeutral: $greenNeutral;
+$successLight: $greenLight;
+$infoAccent: $blueAccent;
+$infoNeutral: $blueNeutral;
+$infoLight: $blueLight;
+$warningAccent: $brownAccent;
+$warningNeutral: $brownNeutral;
+$warningLight: $brownLight;
+$dangerAccent: $redAccent;
+$dangerNeutral: $redNeutral;
+$dangerLight: $redLight;
