@@ -5,6 +5,7 @@ import { graphql } from 'react-apollo';
 import QueryService from '../../queries-service';
 import * as sessionActions from '../../actions/sessionActions';
 import { InputBox, Button } from 'coupon-components';
+import style from './Login.scss'
 
 class LogInPage extends React.Component {
   state = {
@@ -40,7 +41,7 @@ class LogInPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={style.container}>
         <form onChange={this.onChange} onSubmit={this.onSave}>
 
           <InputBox
@@ -48,6 +49,7 @@ class LogInPage extends React.Component {
             leftIcon="FaUser"
             placeholder="Usuario"
             shape="pill"
+            className={style.input}
             value={this.state.credentials.email}
           />
 
@@ -57,6 +59,7 @@ class LogInPage extends React.Component {
             type="password"
             placeholder="Contraseña"
             shape="pill"
+            className={style.input}
             value={this.state.credentials.password}
           />
 

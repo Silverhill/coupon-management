@@ -1,0 +1,68 @@
+$clearBlue: #2962ff;
+$clearBlueAlpha: #2962fa;
+$pinkRed: #ff4a67;
+$lightRoyalBlueAlpha: #5c4cfd;
+$dark: #000000;
+$brightBlue: #0076ff;
+$paleGray: #e4e4e4;
+$paleLilac: #fafafa;
+$silverColor: #979797;
+$baseGreen: #b8e986;
+$sunshineLightYellow: rgba(255, 252, 53, 0.884);
+$strongPink: #ff007c;
+$baseGray: #4a4a4a;
+$baseGrayMedium: #c7c7cd;
+$greenAccent: #3c763d;
+$greenNeutral: #dff0d8;
+$greenLight: #d6e9c6;
+$blueAccent: #31708f;
+$blueNeutral: #d9edf7;
+$blueLight: #bce8f1;
+$brownAccent: #8a6d3b;
+$brownNeutral: #fcf8e3;
+$brownLight: #faebcc;
+$redAccent: #a94442;
+$redNeutral: #f2dede;
+$redLight: #ebccd1;
+$goldGradient: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+$baseGrayLow: #f4f4f4;
+$lightBlueColor: #4a9fff;
+
+/****************
+ * Main Pallette
+ ****************/
+
+$primaryColor: $pinkRed;
+$secondaryColor: $brightBlue;
+$lightNeutral: $paleLilac;
+$mediumNeutral: $paleGray;
+$darkNeutral: #8F8E94;
+$darkColor: $baseGray;
+$highlightColor: $brightBlue;
+
+/****************
+ * Pallette
+ ****************/
+
+$neutralColorDark: #8F8E94;
+$neutralColorMedium: $paleGray;
+$neutralColorLight: $paleLilac;
+$neutralColorPlain: $baseGrayMedium;
+$whiteColor: white;
+$accentColor: $clearBlue;
+$accentColorSecondary: $pinkRed;
+$starGradient: $sunshineLightYellow;
+$endGradient: $strongPink;
+$highlightNeutral: $brightBlue;
+$successAccent: $greenAccent;
+$successNeutral: $greenNeutral;
+$successLight: $greenLight;
+$infoAccent: $blueAccent;
+$infoNeutral: $blueNeutral;
+$infoLight: $blueLight;
+$warningAccent: $brownAccent;
+$warningNeutral: $brownNeutral;
+$warningLight: $brownLight;
+$dangerAccent: $redAccent;
+$dangerNeutral: $redNeutral;
+$dangerLight: $redLight;

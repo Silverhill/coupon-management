@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
-import { Card, Typography, RowHunter } from 'coupon-components';
+import { Card, Typography, BasicRow } from 'coupon-components';
 
 import QueryService from '../../queries-service';
 import style from './MakerPage.scss';
@@ -23,11 +23,11 @@ class MakerPage extends React.Component {
               <Typography.Title>Listado de Hunters</Typography.Title>
               {(this.props.data.allMakers || []).map((user, i) => (
                 <Card key={i}>
-                  <RowHunter
+                  <BasicRow
                     key={i}
-                    name={user.name}
-                    email={user.email}
-                    totalCoupons={user.couponCount}
+                    title={user.name}
+                    subtitle={user.email}
+                    number={user.couponCount}
                   />
                 </Card>
               ))}

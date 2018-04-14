@@ -90,6 +90,7 @@ module.exports = {
       'react-native': 'react-native-web',
       Components: path.resolve(__dirname, '../src/components'),
       Pages: path.resolve(__dirname, '../src/pages'),
+      Styles: path.resolve(__dirname, '../src/styles'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -181,6 +182,7 @@ module.exports = {
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
                   plugins: () => [
+                    require('postcss-icss-values'),
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({
                       browsers: [

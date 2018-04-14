@@ -23,7 +23,18 @@ const QueryService = {
       name
       email
     }
-  }`
+  }
+  `,
+  getMe: gql`
+  query getMe{
+    me {
+      name
+      email
+      id
+      role
+    }
+  }
+  `
 }
 
 export default QueryService;
