@@ -1,3 +1,3 @@
 module.exports = {
-  API_URL: 'https://coupon-backend.herokuapp.com/graphql'
+  API_URL: process.env.API_URL
 };
