@@ -94,6 +94,9 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      Components: path.resolve(__dirname, '../src/components'),
+      Pages: path.resolve(__dirname, '../src/pages'),
+      Styles: path.resolve(__dirname, '../src/styles')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -167,6 +170,7 @@ module.exports = {
           // in the main CSS file.
           {
             test: [/\.css$/, /\.scss$/, /\.sass$/],
+            exclude: [/node_modules/, /coupon-components/],
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -215,6 +219,14 @@ module.exports = {
               )
             ),
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+          {
+            test: [/\.css$/],
+            include: [/node_modules/, /coupon-components/],
+            use: [
+              require.resolve('style-loader'),
+              require.resolve('css-loader')
+            ],
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
