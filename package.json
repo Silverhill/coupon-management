@@ -63,7 +63,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "postinstall": "npm run build",
+    "heroku-postbuild": "npm run build",
     "start-staging": "node server.js",
     "test": "node scripts/test.js --env=jsdom"
   },
